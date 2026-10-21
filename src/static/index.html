@@ -13,6 +13,45 @@
     </header>
 
     <main>
+      <section id="account-container">
+        <h3>Account</h3>
+        <div id="account-status" aria-live="polite">Checking sign-in...</div>
+        <div id="auth-panel">
+          <div class="auth-tabs">
+            <button id="show-login" type="button" class="secondary-btn">Sign In</button>
+            <button id="show-register" type="button" class="secondary-btn">Create Student Account</button>
+          </div>
+          <form id="auth-form">
+            <div class="form-group">
+              <label for="auth-email">Email:</label>
+              <input type="email" id="auth-email" required autocomplete="username" />
+            </div>
+            <div class="form-group">
+              <label for="auth-password">Password:</label>
+              <input type="password" id="auth-password" required minlength="12" autocomplete="current-password" />
+            </div>
+            <button id="auth-submit" type="submit">Sign In</button>
+          </form>
+        </div>
+        <button id="logout-button" type="button" class="hidden">Sign Out</button>
+      </section>
+
+      <section id="supervisor-container" class="hidden">
+        <h3>Club Administrator Assignments</h3>
+        <form id="assignment-form">
+          <div class="form-group">
+            <label for="administrator-email">Administrator email:</label>
+            <input type="email" id="administrator-email" required />
+          </div>
+          <div class="form-group">
+            <label for="club-name">Club name:</label>
+            <input type="text" id="club-name" required maxlength="100" />
+          </div>
+          <button type="submit">Assign Administrator</button>
+        </form>
+        <ul id="assignments-list"></ul>
+      </section>
+
       <section id="activities-container">
         <h3>Available Activities</h3>
         <div id="activities-list">
@@ -25,10 +64,6 @@
         <h3>Sign Up for an Activity</h3>
         <form id="signup-form">
           <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
-          </div>
-          <div class="form-group">
             <label for="activity">Select Activity:</label>
             <select id="activity" required>
               <option value="">-- Select an activity --</option>
@@ -37,8 +72,8 @@
           </div>
           <button type="submit">Sign Up</button>
         </form>
-        <div id="message" class="hidden"></div>
       </section>
+      <div id="message" class="hidden" role="status" aria-live="polite"></div>
     </main>
 
     <footer>
